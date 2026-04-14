@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DiarioApp — Legal</title>
+  <style>
+    :root {
+      --warm-900: #3b1f0a;
+      --warm-700: #7c3d12;
+      --warm-500: #c2732b;
+      --warm-300: #f0c08a;
+      --warm-100: #fff8f0;
+      --neutral-800: #2d2d2d;
+      --neutral-500: #6b6b6b;
+      --neutral-200: #e8e8e8;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        'Helvetica Neue', Arial, sans-serif;
+      background-color: var(--warm-100);
+      color: var(--neutral-800);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* ── HEADER ─────────────────────────────────── */
+    header {
+      background-color: var(--warm-700);
+      color: var(--white);
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.4rem;
+    }
+
+    header p {
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+
+    /* ── LANGUAGE TABS ───────────────────────────── */
+    .lang-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1.25rem 1rem;
+      background-color: var(--warm-900);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .lang-btn {
+      padding: 0.5rem 1.5rem;
+      border: 2px solid var(--warm-300);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--warm-300);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .lang-btn.active,
+    .lang-btn:hover {
+      background: var(--warm-300);
+      color: var(--warm-900);
+    }
+
+    /* ── MAIN CONTENT ────────────────────────────── */
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    .lang-section { display: none; }
+    .lang-section.visible { display: block; }
+
+    /* ── SECTIONS ────────────────────────────────── */
+    .doc-section {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem 2rem 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-left: 4px solid var(--warm-500);
+    }
+
+    .doc-section h2 {
+      font-size: 1.4rem;
+      color: var(--warm-700);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--neutral-200);
+    }
+
+    .doc-section h3 {
+      font-size: 1.05rem;
+      color: var(--warm-700);
+      margin: 1.4rem 0 0.5rem;
+    }
+
+    .doc-section p {
+      margin-bottom: 0.8rem;
+      color: var(--neutral-800);
+    }
+
+    .doc-section ul {
+      padding-left: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .doc-section ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    .highlight-box {
+      background-color: #fff3e0;
+      border: 1px solid var(--warm-300);
+      border-radius: 8px;
+      padding: 0.9rem 1.1rem;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+
+    .highlight-box strong { color: var(--warm-700); }
+
+    a { color: var(--warm-700); }
+    a:hover { color: var(--warm-500); }
+
+    /* ── FOOTER ──────────────────────────────────── */
+    footer {
+      background-color: var(--warm-900);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.875rem;
+    }
+
+    footer a { color: var(--warm-300); }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5rem; }
+      .doc-section { padding: 1.25rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📔 DiarioApp</h1>
+    <p>Business Productivity Labs · <a href="mailto:businessproductivitylabs@gmail.com"
+      style="color:var(--warm-300)">businessproductivitylabs@gmail.com</a></p>
+  </header>
+
+  <div class="lang-tabs">
+    <button class="lang-btn active" onclick="setLang('es')">Español</button>
+    <button class="lang-btn"       onclick="setLang('en')">English</button>
+  </div>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════
+         ESPAÑOL
+    ══════════════════════════════════════════════ -->
+    <div id="lang-es" class="lang-section visible">
+
+      <div class="doc-section">
+        <h2>Política de Privacidad</h2>
+        <p><strong>Fecha de vigencia:</strong> 14 de abril de 2026</p>
+
+        <p>
+          Business Productivity Labs (<em>"nosotros"</em>, <em>"nuestro"</em>) opera
+          la aplicación móvil <strong>DiarioApp</strong> (paquete:
+          <code>com.diarioapp</code>). Esta Política de Privacidad describe qué
+          información se recopila, cómo se usa y qué derechos tienes como usuario.
+        </p>
+
+        <h3>1. Datos almacenados localmente</h3>
+        <p>
+          DiarioApp almacena toda tu información <strong>exclusivamente en tu
+          dispositivo</strong> mediante <code>AsyncStorage</code>. Nunca enviamos,
+          subimos ni transmitimos el contenido de tu diario a ningún servidor propio.
+        </p>
+        <p>Los datos que se guardan localmente incluyen:</p>
+        <ul>
+          <li>Entradas del diario: título, cuerpo, estado de ánimo y fecha</li>
+          <li>Preferencias: tema visual (claro / oscuro / automático), idioma y hora de recordatorio</li>
+          <li>Estado del plan: free o Premium</li>
+        </ul>
+
+        <div class="highlight-box">
+          <strong>Tu diario es solo tuyo.</strong> El contenido de tus entradas
+          nunca sale de tu dispositivo ni es accesible por Business Productivity Labs.
+        </div>
+
+        <h3>2. Servicios de terceros</h3>
+
+        <p>
+          DiarioApp integra los siguientes servicios externos, cada uno con su propia
+          política de privacidad:
+        </p>
+
+        <p><strong>Google AdMob</strong> (solo usuarios del plan free)</p>
+        <ul>
+          <li>Muestra anuncios dentro de la app en el plan gratuito.</li>
+          <li>Google puede recopilar el identificador de publicidad de tu dispositivo
+            (IDFA / GAID) para personalizar los anuncios.</li>
+          <li>Al activar Premium, los anuncios desaparecen y AdMob deja de operar.</li>
+          <li>
+            Política de privacidad de Google:
+            <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>
+          </li>
+        </ul>
+
+        <p><strong>RevenueCat</strong></p>
+        <ul>
+          <li>Gestiona las suscripciones Premium de forma segura.</li>
+          <li>Almacena el historial de transacciones y el estado del entitlement
+            "premium" en sus servidores.</li>
+          <li>No accede al contenido de tus entradas.</li>
+          <li>
+            Política de privacidad de RevenueCat:
+            <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a>
+          </li>
+        </ul>
+
+        <p><strong>Notifee (notificaciones locales)</strong></p>
+        <ul>
+          <li>Gestiona el recordatorio diario de escritura.</li>
+          <li>Las notificaciones son estrictamente locales: no se envían datos
+            a servidores externos de ningún tipo.</li>
+        </ul>
+
+        <h3>3. Derechos del usuario (GDPR / LGPD)</h3>
+        <ul>
+          <li>
+            <strong>Acceso:</strong> puedes exportar tus datos contactándonos en
+            <a href="mailto:businessproductivitylabs@gmail.com">businessproductivitylabs@gmail.com</a>.
+          </li>
+          <li>
+            <strong>Rectificación:</strong> puedes editar cualquier entrada directamente
+            en la app en cualquier momento.
+          </li>
+          <li>
+            <strong>Supresión:</strong> ve a <em>Configuración → Limpiar todos los datos</em>
+            para eliminar toda tu información de forma permanente e irreversible del dispositivo.
+          </li>
+          <li>
+            <strong>Oposición publicitaria:</strong> desactiva los anuncios actualizando al
+            plan Premium o ajustando los permisos de publicidad en la configuración de tu dispositivo.
+          </li>
+        </ul>
+
+        <h3>4. Seguridad</h3>
+        <p>
+          Como los datos residen en tu dispositivo, la seguridad depende principalmente del
+          bloqueo de pantalla y de las medidas de protección de tu propio teléfono. Te
+          recomendamos mantener el dispositivo actualizado y usar bloqueo con PIN o biometría.
+        </p>
+
+        <h3>5. Cambios en esta Política</h3>
+        <p>
+          Si realizamos cambios relevantes, actualizaremos la fecha de vigencia en la parte
+          superior de este documento. Te recomendamos revisarla periódicamente.
+          Para consultas, escríbenos a
+          <a href="mailto:businessproductivitylabs@gmail.com">businessproductivitylabs@gmail.com</a>.
+        </p>
+      </div>
+
+      <div class="doc-section">
+        <h2>Términos y Condiciones de Uso</h2>
+        <p><strong>Fecha de vigencia:</strong> 14 de abril de 2026</p>
+
+        <p>
+          Al descargar o utilizar <strong>DiarioApp</strong>, aceptas los presentes
+          Términos y Condiciones. Si no estás de acuerdo, por favor desinstala la
+          aplicación.
+        </p>
+
+        <h3>1. Descripción del servicio</h3>
+        <p>
+          DiarioApp es una aplicación móvil de diario personal que permite escribir
+          entradas con texto libre, estado de ánimo y fotos, con recordatorio diario
+          configurable y vista de calendario para revisar el historial. Operada por
+          <strong>Business Productivity Labs</strong>.
+        </p>
+
+        <h3>2. Planes disponibles</h3>
+        <ul>
+          <li>
+            <strong>Plan Free:</strong> hasta 30 entradas totales almacenadas;
+            incluye anuncios de AdMob; acceso al historial de los últimos 30 días
+            en el calendario.
+          </li>
+          <li>
+            <strong>Plan Premium:</strong> entradas ilimitadas, adjunto de fotos,
+            exportación a PDF, historial completo en el calendario y experiencia
+            sin anuncios.
+          </li>
+        </ul>
+
+        <h3>3. Suscripción Premium</h3>
+        <ul>
+          <li>Facturación mensual recurrente procesada por Google Play Store o
+            Apple App Store según la plataforma.</li>
+          <li><strong>Período de prueba gratuita: 7 días.</strong> No se realiza
+            ningún cobro si cancelas antes de que finalice el período de prueba.</li>
+          <li>La suscripción se renueva automáticamente salvo que sea cancelada
+            con al menos 24 horas de antelación al fin del período activo.</li>
+          <li>La política de reembolsos corresponde íntegramente a las condiciones
+            de Google Play o Apple App Store según la plataforma de compra.</li>
+        </ul>
+
+        <h3>4. Propiedad intelectual del contenido</h3>
+        <p>
+          Todo el contenido que escribes en DiarioApp —entradas, reflexiones, textos—
+          es de tu propiedad exclusiva. Business Productivity Labs no reivindica
+          ningún derecho sobre las entradas del usuario.
+        </p>
+
+        <h3>5. Uso aceptable</h3>
+        <p>Queda prohibido:</p>
+        <ul>
+          <li>Realizar ingeniería inversa, descompilar o modificar la aplicación.</li>
+          <li>Distribuir copias no autorizadas de la app.</li>
+          <li>Usar la app con fines ilegales o para actividades que dañen a terceros.</li>
+        </ul>
+
+        <h3>6. Limitación de responsabilidad</h3>
+        <p>
+          DiarioApp almacena los datos localmente en tu dispositivo. Business Productivity
+          Labs no se responsabiliza por la pérdida de datos derivada de la desinstalación
+          de la app, el restablecimiento de fábrica del dispositivo o daños al hardware.
+          <strong>Recomendamos realizar copias de respaldo periódicas.</strong>
+        </p>
+
+        <h3>7. Modificaciones al servicio</h3>
+        <p>
+          Nos reservamos el derecho de modificar, suspender o descontinuar funcionalidades
+          de la app en cualquier momento, con o sin previo aviso.
+        </p>
+
+        <h3>8. Ley aplicable y jurisdicción</h3>
+        <p>
+          Estos Términos se rigen por las leyes de la <strong>República de Colombia</strong>.
+          Cualquier controversia se someterá a la jurisdicción exclusiva de los tribunales
+          de <strong>Bogotá D.C.</strong>
+        </p>
+
+        <h3>9. Contacto</h3>
+        <p>
+          Para consultas legales o reclamaciones:
+          <a href="mailto:businessproductivitylabs@gmail.com">businessproductivitylabs@gmail.com</a>
+        </p>
+      </div>
+
+    </div><!-- /lang-es -->
+
+
+    <!-- ══════════════════════════════════════════════
+         ENGLISH
+    ══════════════════════════════════════════════ -->
+    <div id="lang-en" class="lang-section">
+
+      <div class="doc-section">
+        <h2>Privacy Policy</h2>
+        <p><strong>Effective date:</strong> April 14, 2026</p>
+
+        <p>
+          Business Productivity Labs (<em>"we"</em>, <em>"our"</em>) operates the
+          <strong>DiarioApp</strong> mobile application (package:
+          <code>com.diarioapp</code>). This Privacy Policy explains what information
+          is collected, how it is used, and what rights you have as a user.
+        </p>
+
+        <h3>1. Locally stored data</h3>
+        <p>
+          DiarioApp stores all your information <strong>exclusively on your device</strong>
+          using <code>AsyncStorage</code>. We never send, upload, or transmit your diary
+          content to any of our own servers.
+        </p>
+        <p>Data stored locally includes:</p>
+        <ul>
+          <li>Diary entries: title, body, mood, and date</li>
+          <li>Preferences: visual theme (light / dark / auto), language, and reminder time</li>
+          <li>Plan status: free or Premium</li>
+        </ul>
+
+        <div class="highlight-box">
+          <strong>Your diary belongs only to you.</strong> The content of your entries
+          never leaves your device and is not accessible by Business Productivity Labs.
+        </div>
+
+        <h3>2. Third-party services</h3>
+
+        <p>
+          DiarioApp integrates the following external services, each with its own
+          privacy policy:
+        </p>
+
+        <p><strong>Google AdMob</strong> (free plan users only)</p>
+        <ul>
+          <li>Displays ads inside the app on the free plan.</li>
+          <li>Google may collect your device's advertising identifier (IDFA / GAID)
+            to personalize ads.</li>
+          <li>Upgrading to Premium removes all ads and stops AdMob from operating.</li>
+          <li>
+            Google Privacy Policy:
+            <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>
+          </li>
+        </ul>
+
+        <p><strong>RevenueCat</strong></p>
+        <ul>
+          <li>Handles Premium subscriptions securely.</li>
+          <li>Stores transaction history and the "premium" entitlement status on its servers.</li>
+          <li>Does not access the content of your diary entries.</li>
+          <li>
+            RevenueCat Privacy Policy:
+            <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a>
+          </li>
+        </ul>
+
+        <p><strong>Notifee (local notifications)</strong></p>
+        <ul>
+          <li>Powers the daily writing reminder.</li>
+          <li>Notifications are strictly local — no data is sent to any external server.</li>
+        </ul>
+
+        <h3>3. User rights (GDPR / LGPD)</h3>
+        <ul>
+          <li>
+            <strong>Access:</strong> you may request an export of your data by contacting us at
+            <a href="mailto:businessproductivitylabs@gmail.com">businessproductivitylabs@gmail.com</a>.
+          </li>
+          <li>
+            <strong>Rectification:</strong> you can edit any diary entry directly in the app
+            at any time.
+          </li>
+          <li>
+            <strong>Erasure:</strong> go to <em>Settings → Clear all data</em> to permanently
+            and irreversibly delete all your information from the device.
+          </li>
+          <li>
+            <strong>Advertising opt-out:</strong> disable ads by upgrading to Premium or by
+            adjusting advertising permissions in your device settings.
+          </li>
+        </ul>
+
+        <h3>4. Security</h3>
+        <p>
+          Since data resides on your device, security depends primarily on your screen lock
+          and your phone's built-in protections. We recommend keeping your device updated
+          and enabling PIN or biometric lock.
+        </p>
+
+        <h3>5. Changes to this Policy</h3>
+        <p>
+          If we make significant changes, we will update the effective date at the top of
+          this document. We encourage you to review it periodically.
+          For questions, email us at
+          <a href="mailto:businessproductivitylabs@gmail.com">businessproductivitylabs@gmail.com</a>.
+        </p>
+      </div>
+
+      <div class="doc-section">
+        <h2>Terms and Conditions of Use</h2>
+        <p><strong>Effective date:</strong> April 14, 2026</p>
+
+        <p>
+          By downloading or using <strong>DiarioApp</strong>, you agree to these
+          Terms and Conditions. If you do not agree, please uninstall the application.
+        </p>
+
+        <h3>1. Description of service</h3>
+        <p>
+          DiarioApp is a personal diary mobile app that lets you write entries with free
+          text, mood tracking, and photos, with a configurable daily reminder and a
+          calendar view to review your history. Operated by
+          <strong>Business Productivity Labs</strong>.
+        </p>
+
+        <h3>2. Available plans</h3>
+        <ul>
+          <li>
+            <strong>Free plan:</strong> up to 30 total stored entries; includes AdMob ads;
+            calendar history limited to the last 30 days.
+          </li>
+          <li>
+            <strong>Premium plan:</strong> unlimited entries, photo attachments, PDF export,
+            full calendar history, and an ad-free experience.
+          </li>
+        </ul>
+
+        <h3>3. Premium subscription</h3>
+        <ul>
+          <li>Recurring monthly billing processed by Google Play Store or Apple App Store
+            depending on the platform.</li>
+          <li><strong>Free trial period: 7 days.</strong> You will not be charged if you
+            cancel before the trial period ends.</li>
+          <li>The subscription renews automatically unless cancelled at least 24 hours
+            before the end of the active period.</li>
+          <li>Refund policy is governed entirely by the conditions of Google Play or Apple
+            App Store according to the purchase platform.</li>
+        </ul>
+
+        <h3>4. Intellectual property of content</h3>
+        <p>
+          All content you write in DiarioApp — entries, reflections, text — is your
+          exclusive property. Business Productivity Labs claims no rights over user entries.
+        </p>
+
+        <h3>5. Acceptable use</h3>
+        <p>The following are prohibited:</p>
+        <ul>
+          <li>Reverse engineering, decompiling, or modifying the application.</li>
+          <li>Distributing unauthorized copies of the app.</li>
+          <li>Using the app for illegal purposes or activities that harm third parties.</li>
+        </ul>
+
+        <h3>6. Limitation of liability</h3>
+        <p>
+          DiarioApp stores data locally on your device. Business Productivity Labs is not
+          responsible for data loss resulting from uninstalling the app, factory-resetting
+          the device, or hardware damage.
+          <strong>We recommend making periodic manual backups.</strong>
+        </p>
+
+        <h3>7. Changes to the service</h3>
+        <p>
+          We reserve the right to modify, suspend, or discontinue app features at any time,
+          with or without prior notice.
+        </p>
+
+        <h3>8. Governing law and jurisdiction</h3>
+        <p>
+          These Terms are governed by the laws of the <strong>Republic of Colombia</strong>.
+          Any dispute shall be subject to the exclusive jurisdiction of the courts of
+          <strong>Bogotá D.C.</strong>
+        </p>
+
+        <h3>9. Contact</h3>
+        <p>
+          For legal inquiries or claims:
+          <a href="mailto:businessproductivitylabs@gmail.com">businessproductivitylabs@gmail.com</a>
+        </p>
+      </div>
+
+    </div><!-- /lang-en -->
+
+  </main>
+
+  <footer>
+    <p>
+      &copy; 2026 Business Productivity Labs ·
+      <a href="mailto:businessproductivitylabs@gmail.com">businessproductivitylabs@gmail.com</a>
+    </p>
+    <p style="margin-top:0.4rem; font-size:0.8rem; opacity:0.6;">
+      DiarioApp · com.diarioapp
+    </p>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('.lang-section').forEach(function(el) {
+        el.classList.remove('visible');
+      });
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+      document.getElementById('lang-' + lang).classList.add('visible');
+      event.target.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
