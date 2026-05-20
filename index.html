@@ -1,653 +1,1198 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DiarioApp — Legal</title>
-  <style>
-    :root {
-      --warm-900: #3b1f0a;
-      --warm-700: #7c3d12;
-      --warm-500: #c2732b;
-      --warm-300: #f0c08a;
-      --warm-100: #fff8f0;
-      --neutral-800: #2d2d2d;
-      --neutral-500: #6b6b6b;
-      --neutral-200: #e8e8e8;
-      --white: #ffffff;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DiarioApp — Política de Privacidad y Términos de Uso</title>
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        'Helvetica Neue', Arial, sans-serif;
-      background-color: var(--warm-100);
-      color: var(--neutral-800);
-      line-height: 1.7;
-      font-size: 16px;
-    }
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    /* ── HEADER ─────────────────────────────────── */
-    header {
-      background-color: var(--warm-700);
-      color: var(--white);
-      padding: 2.5rem 1.5rem 2rem;
-      text-align: center;
-    }
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
-    header h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 0.4rem;
-    }
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --primary-dark: #3730A3;
+            --accent: #06B6D4;
+            --navy: #0F172A;
+            --text: #1E293B;
+            --text-muted: #64748B;
+            --bg: #F1F5F9;
+            --card: #FFFFFF;
+            --border: #E2E8F0;
+            --radius: 16px;
+            --shadow: 0 4px 24px rgba(15, 23, 42, .07);
+            --shadow-lg: 0 12px 48px rgba(15, 23, 42, .13);
+        }
 
-    header p {
-      font-size: 0.95rem;
-      opacity: 0.85;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    /* ── LANGUAGE TABS ───────────────────────────── */
-    .lang-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 0.75rem;
-      padding: 1.25rem 1rem;
-      background-color: var(--warm-900);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+        }
 
-    .lang-btn {
-      padding: 0.5rem 1.5rem;
-      border: 2px solid var(--warm-300);
-      border-radius: 999px;
-      background: transparent;
-      color: var(--warm-300);
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-    }
+        /* ── Hero Header ─────────────────────────────── */
+        .site-hero {
+            background: linear-gradient(135deg, #14355694 0%, #272754 50%, #312E81 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 28px 0 22px;
+        }
 
-    .lang-btn.active,
-    .lang-btn:hover {
-      background: var(--warm-300);
-      color: var(--warm-900);
-    }
+        .site-hero::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 420px;
+            height: 420px;
+            background: radial-gradient(circle, rgba(99, 102, 241, .28) 0%, transparent 70%);
+            pointer-events: none;
+        }
 
-    /* ── MAIN CONTENT ────────────────────────────── */
-    main {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
-    }
+        .site-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            left: -40px;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(6, 182, 212, .22) 0%, transparent 70%);
+            pointer-events: none;
+        }
 
-    .lang-section { display: none; }
-    .lang-section.visible { display: block; }
+        .hero-logo-img {
+            width: 34%;
+            max-width: 200px;
+        }
 
-    /* ── SECTIONS ────────────────────────────────── */
-    .doc-section {
-      background: var(--white);
-      border-radius: 12px;
-      padding: 2rem 2rem 1.5rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      border-left: 4px solid var(--warm-500);
-    }
+        .hero-divider {
+            width: 1px;
+            height: 36px;
+            background: rgba(255, 255, 255, .22);
+            margin: 0 16px;
+            flex-shrink: 0;
+        }
 
-    .doc-section h2 {
-      font-size: 1.4rem;
-      color: var(--warm-700);
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.6rem;
-      border-bottom: 1px solid var(--neutral-200);
-    }
+        .hero-app-name {
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -.5px;
+            line-height: 1.1;
+        }
 
-    .doc-section h3 {
-      font-size: 1.05rem;
-      color: var(--warm-700);
-      margin: 1.4rem 0 0.5rem;
-    }
+        .hero-subtitle {
+            font-size: .9rem;
+            color: rgba(255, 255, 255, .6);
+            font-weight: 400;
+            margin-top: 3px;
+        }
 
-    .doc-section p {
-      margin-bottom: 0.8rem;
-      color: var(--neutral-800);
-    }
+        .hero-badges {
+            display: flex;
+            gap: 6px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
 
-    .doc-section ul {
-      padding-left: 1.4rem;
-      margin-bottom: 0.8rem;
-    }
+        .hero-badge {
+            background: rgba(255, 255, 255, .1);
+            border: 1px solid rgba(255, 255, 255, .18);
+            color: rgba(255, 255, 255, .85);
+            font-size: .76rem;
+            font-weight: 500;
+            padding: 5px 14px;
+            border-radius: 100px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
 
-    .doc-section ul li {
-      margin-bottom: 0.4rem;
-    }
+        /* ── Sticky Nav ──────────────────────────────── */
+        .site-nav {
+            background: rgba(255, 255, 255, .97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 300;
+            box-shadow: 0 2px 12px rgba(15, 23, 42, .06);
+        }
 
-    .highlight-box {
-      background-color: #fff3e0;
-      border: 1px solid var(--warm-300);
-      border-radius: 8px;
-      padding: 0.9rem 1.1rem;
-      margin: 1rem 0;
-      font-size: 0.95rem;
-    }
+        .site-nav .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            padding: 10px 24px;
+            flex-wrap: wrap;
+        }
 
-    .highlight-box strong { color: var(--warm-700); }
+        .site-nav a {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: .875rem;
+            padding: 7px 16px;
+            border-radius: 8px;
+            transition: all .2s;
+        }
 
-    a { color: var(--warm-700); }
-    a:hover { color: var(--warm-500); }
+        .site-nav a:hover {
+            background: #EEF2FF;
+            color: var(--primary);
+        }
 
-    /* ── FOOTER ──────────────────────────────────── */
-    footer {
-      background-color: var(--warm-900);
-      color: rgba(255,255,255,0.7);
-      text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.875rem;
-    }
+        /* ── Content wrapper ─────────────────────────── */
+        .content-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 48px 20px 80px;
+        }
 
-    footer a { color: var(--warm-300); }
+        /* ── Policy section cards ────────────────────── */
+        .policy-section {
+            background: var(--card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            padding: 44px 48px;
+            margin-bottom: 28px;
+            box-shadow: var(--shadow);
+            transition: box-shadow .3s;
+        }
 
-    @media (max-width: 600px) {
-      header h1 { font-size: 1.5rem; }
-      .doc-section { padding: 1.25rem 1rem; }
-    }
-  </style>
+        .policy-section:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding-bottom: 20px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .section-icon.privacy {
+            background: #EEF2FF;
+            color: var(--primary);
+        }
+
+        .section-icon.terms {
+            background: #F0FDF4;
+            color: #16A34A;
+        }
+
+        .section-icon.deletion {
+            background: #FFF1F2;
+            color: #E11D48;
+        }
+
+        .section-icon.contact {
+            background: #FFF7ED;
+            color: #EA580C;
+        }
+
+        .section-header h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin: 0 0 2px;
+        }
+
+        .section-date {
+            font-size: .77rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin: 0;
+        }
+
+        h3 {
+            font-size: .96rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 28px 0 8px;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        h3::before {
+            content: '';
+            display: inline-block;
+            width: 3px;
+            height: 15px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        p {
+            margin-bottom: 12px;
+            color: #475569;
+        }
+
+        ul,
+        ol {
+            padding-left: 22px;
+            margin-bottom: 12px;
+        }
+
+        li {
+            margin-bottom: 6px;
+            color: #475569;
+        }
+
+        code {
+            background: #F1F5F9;
+            color: var(--primary);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: .85em;
+        }
+
+        /* ── Notice box ──────────────────────────────── */
+        .notice {
+            background: linear-gradient(135deg, #EEF2FF, #F0F9FF);
+            border: 1px solid #C7D2FE;
+            border-left: 4px solid var(--primary);
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 4px 0 20px;
+            font-size: .9rem;
+            color: #3730A3;
+        }
+
+        .notice strong {
+            color: #312E81;
+        }
+
+        /* ── Third-party table ───────────────────────── */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 16px 0;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: .875rem;
+        }
+
+        thead th {
+            background: #F8FAFC;
+            color: var(--navy);
+            font-weight: 700;
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 2px solid var(--border);
+            font-size: .78rem;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+        }
+
+        tbody td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            color: #475569;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover td {
+            background: #F8FAFC;
+        }
+
+        tbody td a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        tbody td a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Contact grid ────────────────────────────── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            background: #F8FAFC;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px 18px;
+        }
+
+        .contact-item .label {
+            font-size: .7rem;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .contact-item .value {
+            font-weight: 600;
+            color: var(--text);
+            font-size: .92rem;
+        }
+
+        .contact-item .value a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .contact-item.full {
+            grid-column: 1 / -1;
+        }
+
+        /* ── Footer ──────────────────────────────────── */
+        footer {
+            background: var(--navy);
+            color: rgba(255, 255, 255, .55);
+            padding: 40px 24px 32px;
+            text-align: center;
+            font-size: .82rem;
+        }
+
+        footer .footer-logo {
+            height: 48px;
+            filter: brightness(0) invert(1);
+            opacity: .55;
+            margin-bottom: 14px;
+        }
+
+        footer strong {
+            color: rgba(255, 255, 255, .82);
+        }
+
+        .footer-links {
+            margin-top: 16px;
+            display: flex;
+            gap: 4px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, .45);
+            text-decoration: none;
+            padding: 4px 12px;
+            border-radius: 6px;
+            transition: all .2s;
+            font-size: .8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .footer-links a:hover {
+            background: rgba(255, 255, 255, .08);
+            color: rgba(255, 255, 255, .85);
+        }
+
+        /* ── Responsive ──────────────────────────────── */
+        @media (max-width: 768px) {
+            .policy-section {
+                padding: 28px 22px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-app-name {
+                font-size: 1.5rem;
+            }
+
+            .hero-divider {
+                height: 36px;
+                margin: 0 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-logo-img {
+                height: 40px;
+                width: auto;
+            }
+
+            .site-hero {
+                padding: 36px 16px 30px;
+            }
+
+            .hero-app-name {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* ── Language toggle ─────────────────────────── */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+
+        .lang-toggle {
+            display: flex;
+            gap: 4px;
+            flex-shrink: 0;
+        }
+
+        .lang-btn {
+            padding: 5px 14px;
+            border-radius: 7px;
+            border: 1.5px solid var(--border);
+            background: transparent;
+            color: var(--text-muted);
+            font-size: .78rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .2s;
+            font-family: inherit;
+            letter-spacing: .06em;
+            line-height: 1;
+        }
+
+        .lang-btn.active,
+        .lang-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #fff;
+        }
+
+        /* ── Language sections ───────────────────────── */
+        .lang-section {
+            display: none;
+        }
+
+        .lang-section.visible {
+            display: block;
+        }
+    </style>
 </head>
-<body>
 
-  <header>
-    <h1>DiarioApp</h1>
-    <p>Business Productivity Labs · <a href="mailto:businessproductivitylabs@gmail.com"
-      style="color:var(--warm-300)">businessproductivitylabs@gmail.com</a></p>
-  </header>
 
-  <div class="lang-tabs">
-    <button class="lang-btn active" onclick="setLang('es')">Español</button>
-    <button class="lang-btn"       onclick="setLang('en')">English</button>
-  </div>
-
-  <main>
-
-    <!-- ══════════════════════════════════════════════
-         ESPAÑOL
-    ══════════════════════════════════════════════ -->
-    <div id="lang-es" class="lang-section visible">
-
-      <div class="doc-section" id="data-deletion-es">
-        <h2>Eliminación de Datos</h2>
-        <p><strong>Aplicación:</strong> MiDiario &nbsp;|&nbsp; <strong>Desarrollador:</strong> Business Productivity Labs</p>
-
-        <h3>Cómo eliminar tus datos</h3>
-        <p>Todas tus entradas y preferencias se guardan <strong>exclusivamente en tu dispositivo</strong>. Para eliminar todos tus datos de forma permanente:</p>
-        <ol>
-          <li>Abre <strong>MiDiario</strong>.</li>
-          <li>Ve a <strong>Configuración</strong> (barra de navegación inferior).</li>
-          <li>Desplázate hasta la sección <strong>Datos</strong>.</li>
-          <li>Pulsa <strong>"Limpiar todos los datos"</strong> y confirma dos veces.</li>
-        </ol>
-        <p>Esta acción es <strong>inmediata e irreversible</strong>. Se eliminan permanentemente todas las entradas del diario, registros de estado de ánimo, preferencias y configuraciones de tu dispositivo.</p>
-
-        <h3>Qué se elimina</h3>
-        <ul>
-          <li>Todas las entradas del diario (título, cuerpo, estado de ánimo, fecha)</li>
-          <li>Preferencias de la app (tema, idioma, hora de recordatorio)</li>
-          <li>Caché local del estado Premium (tu compra permanece en Google Play)</li>
-        </ul>
-
-        <h3>Qué NO se elimina</h3>
-        <ul>
-          <li><strong>Google AdMob:</strong> datos publicitarios gestionados por Google. Gestiona en <a href="https://myaccount.google.com/data-and-privacy" target="_blank">myaccount.google.com</a>.</li>
-          <li><strong>RevenueCat / Google Play:</strong> el historial de compras lo conserva Google Play. Gestiona en <a href="https://play.google.com/store/account/subscriptions" target="_blank">Suscripciones de Google Play</a>.</li>
-        </ul>
-
-        <h3>Contacto</h3>
-        <p>Para solicitudes de eliminación de datos: <a href="mailto:businessproductivitylabs@gmail.com">businessproductivitylabs@gmail.com</a></p>
-      </div>
-
-      <div class="doc-section">
-        <h2>Política de Privacidad</h2>
-        <p><strong>Fecha de vigencia:</strong> 14 de abril de 2026</p>
-
-        <p>
-          Business Productivity Labs (<em>"nosotros"</em>, <em>"nuestro"</em>) opera
-          la aplicación móvil <strong>DiarioApp</strong> (paquete:
-          <code>com.diarioapp</code>). Esta Política de Privacidad describe qué
-          información se recopila, cómo se usa y qué derechos tienes como usuario.
-        </p>
-
-        <h3>1. Datos almacenados localmente</h3>
-        <p>
-          DiarioApp almacena toda tu información <strong>exclusivamente en tu
-          dispositivo</strong> mediante <code>AsyncStorage</code>. Nunca enviamos,
-          subimos ni transmitimos el contenido de tu diario a ningún servidor propio.
-        </p>
-        <p>Los datos que se guardan localmente incluyen:</p>
-        <ul>
-          <li>Entradas del diario: título, cuerpo, estado de ánimo y fecha</li>
-          <li>Preferencias: tema visual (claro / oscuro / automático), idioma y hora de recordatorio</li>
-          <li>Estado del plan: free o Premium</li>
-        </ul>
-
-        <div class="highlight-box">
-          <strong>Tu diario es solo tuyo.</strong> El contenido de tus entradas
-          nunca sale de tu dispositivo ni es accesible por Business Productivity Labs.
+    <!-- ── Hero Header ──────────────────────────────────── -->
+    <header class="site-hero">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <img src="../imagenes/Icono.png" alt="Business Productivity Labs" class="hero-logo-img">
+                <div class="hero-divider"></div>
+                <div>
+                    <div class="hero-app-name">DiarioApp</div>
+                    <div class="hero-subtitle">Política de Privacidad &amp; Términos y Condiciones</div>
+                </div>
+            </div>
+            <div class="hero-badges">
+                <span class="hero-badge"><i class="bi bi-shield-lock-fill"></i> Privacidad</span>
+                <span class="hero-badge"><i class="bi bi-file-earmark-text-fill"></i> Términos</span>
+                <span class="hero-badge"><i class="bi bi-trash3-fill"></i> Eliminación de Datos</span>
+                <span class="hero-badge"><i class="bi bi-phone-fill"></i> Android &amp; iOS</span>
+                <span class="hero-badge"><i class="bi bi-calendar3"></i> Vigente desde 14 abr 2026</span>
+            </div>
         </div>
+    </header>
 
-        <h3>2. Servicios de terceros</h3>
-
-        <p>
-          DiarioApp integra los siguientes servicios externos, cada uno con su propia
-          política de privacidad:
-        </p>
-
-        <p><strong>Google AdMob</strong> (solo usuarios del plan free)</p>
-        <ul>
-          <li>Muestra anuncios dentro de la app en el plan gratuito.</li>
-          <li>Google puede recopilar el identificador de publicidad de tu dispositivo
-            (IDFA / GAID) para personalizar los anuncios.</li>
-          <li>Al activar Premium, los anuncios desaparecen y AdMob deja de operar.</li>
-          <li>
-            Política de privacidad de Google:
-            <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>
-          </li>
-        </ul>
-
-        <p><strong>RevenueCat</strong></p>
-        <ul>
-          <li>Gestiona las suscripciones Premium de forma segura.</li>
-          <li>Almacena el historial de transacciones y el estado del entitlement
-            "premium" en sus servidores.</li>
-          <li>No accede al contenido de tus entradas.</li>
-          <li>
-            Política de privacidad de RevenueCat:
-            <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a>
-          </li>
-        </ul>
-
-        <p><strong>Notifee (notificaciones locales)</strong></p>
-        <ul>
-          <li>Gestiona el recordatorio diario de escritura.</li>
-          <li>Las notificaciones son estrictamente locales: no se envían datos
-            a servidores externos de ningún tipo.</li>
-        </ul>
-
-        <h3>3. Derechos del usuario (GDPR / LGPD)</h3>
-        <ul>
-          <li>
-            <strong>Acceso:</strong> puedes exportar tus datos contactándonos en
-            <a href="mailto:businessproductivitylabs@gmail.com">businessproductivitylabs@gmail.com</a>.
-          </li>
-          <li>
-            <strong>Rectificación:</strong> puedes editar cualquier entrada directamente
-            en la app en cualquier momento.
-          </li>
-          <li>
-            <strong>Supresión:</strong> ve a <em>Configuración → Limpiar todos los datos</em>
-            para eliminar toda tu información de forma permanente e irreversible del dispositivo.
-          </li>
-          <li>
-            <strong>Oposición publicitaria:</strong> desactiva los anuncios actualizando al
-            plan Premium o ajustando los permisos de publicidad en la configuración de tu dispositivo.
-          </li>
-        </ul>
-
-        <h3>4. Seguridad</h3>
-        <p>
-          Como los datos residen en tu dispositivo, la seguridad depende principalmente del
-          bloqueo de pantalla y de las medidas de protección de tu propio teléfono. Te
-          recomendamos mantener el dispositivo actualizado y usar bloqueo con PIN o biometría.
-        </p>
-
-        <h3>5. Cambios en esta Política</h3>
-        <p>
-          Si realizamos cambios relevantes, actualizaremos la fecha de vigencia en la parte
-          superior de este documento. Te recomendamos revisarla periódicamente.
-          Para consultas, escríbenos a
-          <a href="mailto:businessproductivitylabs@gmail.com">businessproductivitylabs@gmail.com</a>.
-        </p>
-      </div>
-
-      <div class="doc-section">
-        <h2>Términos y Condiciones de Uso</h2>
-        <p><strong>Fecha de vigencia:</strong> 14 de abril de 2026</p>
-
-        <p>
-          Al descargar o utilizar <strong>DiarioApp</strong>, aceptas los presentes
-          Términos y Condiciones. Si no estás de acuerdo, por favor desinstala la
-          aplicación.
-        </p>
-
-        <h3>1. Descripción del servicio</h3>
-        <p>
-          DiarioApp es una aplicación móvil de diario personal que permite escribir
-          entradas con texto libre, estado de ánimo y fotos, con recordatorio diario
-          configurable y vista de calendario para revisar el historial. Operada por
-          <strong>Business Productivity Labs</strong>.
-        </p>
-
-        <h3>2. Planes disponibles</h3>
-        <ul>
-          <li>
-            <strong>Plan Free:</strong> hasta 30 entradas totales almacenadas;
-            incluye anuncios de AdMob; acceso al historial de los últimos 30 días
-            en el calendario.
-          </li>
-          <li>
-            <strong>Plan Premium:</strong> entradas ilimitadas, adjunto de fotos,
-            exportación a PDF, historial completo en el calendario y experiencia
-            sin anuncios.
-          </li>
-        </ul>
-
-        <h3>3. Suscripción Premium</h3>
-        <ul>
-          <li>Facturación mensual recurrente procesada por Google Play Store o
-            Apple App Store según la plataforma.</li>
-          <li><strong>Período de prueba gratuita: 7 días.</strong> No se realiza
-            ningún cobro si cancelas antes de que finalice el período de prueba.</li>
-          <li>La suscripción se renueva automáticamente salvo que sea cancelada
-            con al menos 24 horas de antelación al fin del período activo.</li>
-          <li>La política de reembolsos corresponde íntegramente a las condiciones
-            de Google Play o Apple App Store según la plataforma de compra.</li>
-        </ul>
-
-        <h3>4. Propiedad intelectual del contenido</h3>
-        <p>
-          Todo el contenido que escribes en DiarioApp —entradas, reflexiones, textos—
-          es de tu propiedad exclusiva. Business Productivity Labs no reivindica
-          ningún derecho sobre las entradas del usuario.
-        </p>
-
-        <h3>5. Uso aceptable</h3>
-        <p>Queda prohibido:</p>
-        <ul>
-          <li>Realizar ingeniería inversa, descompilar o modificar la aplicación.</li>
-          <li>Distribuir copias no autorizadas de la app.</li>
-          <li>Usar la app con fines ilegales o para actividades que dañen a terceros.</li>
-        </ul>
-
-        <h3>6. Limitación de responsabilidad</h3>
-        <p>
-          DiarioApp almacena los datos localmente en tu dispositivo. Business Productivity
-          Labs no se responsabiliza por la pérdida de datos derivada de la desinstalación
-          de la app, el restablecimiento de fábrica del dispositivo o daños al hardware.
-          <strong>Recomendamos realizar copias de respaldo periódicas.</strong>
-        </p>
-
-        <h3>7. Modificaciones al servicio</h3>
-        <p>
-          Nos reservamos el derecho de modificar, suspender o descontinuar funcionalidades
-          de la app en cualquier momento, con o sin previo aviso.
-        </p>
-
-        <h3>8. Ley aplicable y jurisdicción</h3>
-        <p>
-          Estos Términos se rigen por las leyes de la <strong>República de Colombia</strong>.
-          Cualquier controversia se someterá a la jurisdicción exclusiva de los tribunales
-          de <strong>Bogotá D.C.</strong>
-        </p>
-
-        <h3>9. Contacto</h3>
-        <p>
-          Para consultas legales o reclamaciones:
-          <a href="mailto:businessproductivitylabs@gmail.com">businessproductivitylabs@gmail.com</a>
-        </p>
-      </div>
-
-    </div><!-- /lang-es -->
-
-
-    <!-- ══════════════════════════════════════════════
-         ENGLISH
-    ══════════════════════════════════════════════ -->
-    <div id="lang-en" class="lang-section">
-
-      <div class="doc-section">
-        <h2>Privacy Policy</h2>
-        <p><strong>Effective date:</strong> April 14, 2026</p>
-
-        <p>
-          Business Productivity Labs (<em>"we"</em>, <em>"our"</em>) operates the
-          <strong>DiarioApp</strong> mobile application (package:
-          <code>com.diarioapp</code>). This Privacy Policy explains what information
-          is collected, how it is used, and what rights you have as a user.
-        </p>
-
-        <h3>1. Locally stored data</h3>
-        <p>
-          DiarioApp stores all your information <strong>exclusively on your device</strong>
-          using <code>AsyncStorage</code>. We never send, upload, or transmit your diary
-          content to any of our own servers.
-        </p>
-        <p>Data stored locally includes:</p>
-        <ul>
-          <li>Diary entries: title, body, mood, and date</li>
-          <li>Preferences: visual theme (light / dark / auto), language, and reminder time</li>
-          <li>Plan status: free or Premium</li>
-        </ul>
-
-        <div class="highlight-box">
-          <strong>Your diary belongs only to you.</strong> The content of your entries
-          never leaves your device and is not accessible by Business Productivity Labs.
+    <!-- ── Sticky Nav ───────────────────────────────────── -->
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <div class="nav-links" id="nav-links">
+                <a href="#privacidad"><i class="bi bi-shield-lock"></i> <span>Política de Privacidad</span></a>
+                <a href="#terminos"><i class="bi bi-file-earmark-text"></i> <span>Términos y Condiciones</span></a>
+                <a href="#eliminacion"><i class="bi bi-trash3"></i> <span>Eliminación de Datos</span></a>
+                <a href="#contacto"><i class="bi bi-envelope"></i> <span>Contacto</span></a>
+            </div>
+            <div class="lang-toggle">
+                <button class="lang-btn active" onclick="setLang('es', this)">ES</button>
+                <button class="lang-btn" onclick="setLang('en', this)">EN</button>
+            </div>
         </div>
+    </nav>
 
-        <h3>2. Third-party services</h3>
+    <div class="content-wrap">
 
-        <p>
-          DiarioApp integrates the following external services, each with its own
-          privacy policy:
-        </p>
+        <!-- ── Español ──────────────────────────────────── -->
+        <div id="lang-es" class="lang-section visible">
 
-        <p><strong>Google AdMob</strong> (free plan users only)</p>
-        <ul>
-          <li>Displays ads inside the app on the free plan.</li>
-          <li>Google may collect your device's advertising identifier (IDFA / GAID)
-            to personalize ads.</li>
-          <li>Upgrading to Premium removes all ads and stops AdMob from operating.</li>
-          <li>
-            Google Privacy Policy:
-            <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>
-          </li>
-        </ul>
+            <!-- ══════════════════════════════════════════════════
+                 SECCIÓN 1 — POLÍTICA DE PRIVACIDAD
+            ═══════════════════════════════════════════════════ -->
+            <section class="policy-section" id="privacidad">
+                <div class="section-header">
+                    <div class="section-icon privacy"><i class="bi bi-shield-lock-fill"></i></div>
+                    <div>
+                        <h2>Política de Privacidad</h2>
+                        <p class="section-date">Última actualización: 14 de abril de 2026</p>
+                    </div>
+                </div>
 
-        <p><strong>RevenueCat</strong></p>
-        <ul>
-          <li>Handles Premium subscriptions securely.</li>
-          <li>Stores transaction history and the "premium" entitlement status on its servers.</li>
-          <li>Does not access the content of your diary entries.</li>
-          <li>
-            RevenueCat Privacy Policy:
-            <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a>
-          </li>
-        </ul>
+                <div class="notice">
+                    <strong><i class="bi bi-info-circle-fill me-1"></i>Resumen rápido:</strong> DiarioApp no requiere
+                    registro ni cuenta. El contenido de tu diario se guarda <strong>únicamente en tu dispositivo</strong>.
+                    Sólo los servicios de publicidad y suscripciones de terceros (Google AdMob y RevenueCat) pueden
+                    recopilar datos de uso anónimos según sus propias políticas.
+                </div>
 
-        <p><strong>Notifee (local notifications)</strong></p>
-        <ul>
-          <li>Powers the daily writing reminder.</li>
-          <li>Notifications are strictly local — no data is sent to any external server.</li>
-        </ul>
+                <h3>1. Responsable del tratamiento</h3>
+                <p>La aplicación <strong>DiarioApp</strong> (identificador de paquete:
+                    <code>com.businessproductivitylabs.midiario</code>) es desarrollada y mantenida por <strong>Business
+                        Productivity Labs</strong>. Si tienes preguntas sobre esta política, puedes contactarnos en la
+                    dirección indicada al final de este documento.
+                </p>
 
-        <h3>3. User rights (GDPR / LGPD)</h3>
-        <ul>
-          <li>
-            <strong>Access:</strong> you may request an export of your data by contacting us at
-            <a href="mailto:businessproductivitylabs@gmail.com">businessproductivitylabs@gmail.com</a>.
-          </li>
-          <li>
-            <strong>Rectification:</strong> you can edit any diary entry directly in the app
-            at any time.
-          </li>
-          <li>
-            <strong>Erasure:</strong> go to <em>Settings → Clear all data</em> to permanently
-            and irreversibly delete all your information from the device.
-          </li>
-          <li>
-            <strong>Advertising opt-out:</strong> disable ads by upgrading to Premium or by
-            adjusting advertising permissions in your device settings.
-          </li>
-        </ul>
+                <h3>2. Datos almacenados localmente</h3>
+                <p>DiarioApp almacena toda tu información <strong>exclusivamente en tu dispositivo</strong> mediante
+                    <code>AsyncStorage</code>. Nunca enviamos, subimos ni transmitimos el contenido de tu diario a
+                    ningún servidor propio.</p>
+                <p>Los datos que se guardan localmente incluyen:</p>
+                <ul>
+                    <li>Entradas del diario: título, cuerpo, estado de ánimo y fecha</li>
+                    <li>Preferencias: tema visual (claro / oscuro / automático), idioma y hora de recordatorio</li>
+                    <li>Estado del plan: free o Premium</li>
+                </ul>
 
-        <h3>4. Security</h3>
-        <p>
-          Since data resides on your device, security depends primarily on your screen lock
-          and your phone's built-in protections. We recommend keeping your device updated
-          and enabling PIN or biometric lock.
-        </p>
+                <div class="notice">
+                    <strong>Tu diario es solo tuyo.</strong> El contenido de tus entradas nunca sale de tu dispositivo
+                    ni es accesible por Business Productivity Labs.
+                </div>
 
-        <h3>5. Changes to this Policy</h3>
-        <p>
-          If we make significant changes, we will update the effective date at the top of
-          this document. We encourage you to review it periodically.
-          For questions, email us at
-          <a href="mailto:businessproductivitylabs@gmail.com">businessproductivitylabs@gmail.com</a>.
-        </p>
-      </div>
+                <p>Los únicos datos que pueden ser recopilados son los tratados por los siguientes <strong>servicios de
+                        terceros</strong> integrados en la aplicación:</p>
 
-      <div class="doc-section">
-        <h2>Terms and Conditions of Use</h2>
-        <p><strong>Effective date:</strong> April 14, 2026</p>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Servicio</th>
+                                <th>Finalidad</th>
+                                <th>Datos que puede tratar</th>
+                                <th>Política oficial</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Google AdMob</strong></td>
+                                <td>Mostrar anuncios a usuarios del plan gratuito</td>
+                                <td>ID de publicidad del dispositivo (IDFA / GAID), datos de interacción con anuncios</td>
+                                <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google
+                                        Privacy Policy <i class="bi bi-box-arrow-up-right" style="font-size:.7em"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>RevenueCat</strong></td>
+                                <td>Gestionar suscripciones Premium</td>
+                                <td>ID de dispositivo anónimo, historial de compras/suscripciones (sin datos de tarjeta)</td>
+                                <td><a href="https://www.revenuecat.com/privacy" target="_blank"
+                                        rel="noopener">RevenueCat Privacy Policy <i class="bi bi-box-arrow-up-right"
+                                            style="font-size:.7em"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Google Play / App Store</strong></td>
+                                <td>Distribución y procesamiento de pagos</td>
+                                <td>Gestionados directamente por Google o Apple en el proceso de compra</td>
+                                <td><a href="https://play.google.com/about/play-terms/" target="_blank"
+                                        rel="noopener">Google Play Terms <i class="bi bi-box-arrow-up-right"
+                                            style="font-size:.7em"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-        <p>
-          By downloading or using <strong>DiarioApp</strong>, you agree to these
-          Terms and Conditions. If you do not agree, please uninstall the application.
-        </p>
+                <h3>3. Notificaciones locales</h3>
+                <p>Si activas el recordatorio diario de escritura, la aplicación programa notificaciones locales a través
+                    de la librería <strong>Notifee</strong>. Estas notificaciones se procesan <strong>íntegramente en tu
+                        dispositivo</strong> sin enviar datos a ningún servidor externo. Puedes desactivarlas en
+                    cualquier momento desde la pantalla de Configuración de la app o desde los ajustes de tu dispositivo.</p>
 
-        <h3>1. Description of service</h3>
-        <p>
-          DiarioApp is a personal diary mobile app that lets you write entries with free
-          text, mood tracking, and photos, with a configurable daily reminder and a
-          calendar view to review your history. Operated by
-          <strong>Business Productivity Labs</strong>.
-        </p>
+                <h3>4. Permisos solicitados</h3>
+                <ul>
+                    <li><strong>POST_NOTIFICATIONS</strong> — Para enviar el recordatorio diario de escritura (Android
+                        13+). Opcional.</li>
+                    <li><strong>INTERNET</strong> — Requerido por Google AdMob y RevenueCat para mostrar anuncios y
+                        validar suscripciones.</li>
+                    <li><strong>CAMERA / READ_MEDIA_IMAGES</strong> — Para adjuntar fotos a las entradas del diario
+                        (plan Premium). Opcional.</li>
+                    <li><strong>RECEIVE_BOOT_COMPLETED</strong> — Para reprogramar recordatorios tras reiniciar el
+                        dispositivo. Opcional.</li>
+                </ul>
 
-        <h3>2. Available plans</h3>
-        <ul>
-          <li>
-            <strong>Free plan:</strong> up to 30 total stored entries; includes AdMob ads;
-            calendar history limited to the last 30 days.
-          </li>
-          <li>
-            <strong>Premium plan:</strong> unlimited entries, photo attachments, PDF export,
-            full calendar history, and an ad-free experience.
-          </li>
-        </ul>
+                <h3>5. Derechos del usuario (GDPR / LGPD)</h3>
+                <ul>
+                    <li><strong>Acceso:</strong> puedes exportar tus datos contactándonos en <a
+                            href="mailto:businessproductivitylabs@gmail.com">businessproductivitylabs@gmail.com</a>.</li>
+                    <li><strong>Rectificación:</strong> puedes editar cualquier entrada directamente en la app en
+                        cualquier momento.</li>
+                    <li><strong>Supresión:</strong> ve a <em>Configuración → Limpiar todos los datos</em> para eliminar
+                        toda tu información de forma permanente e irreversible del dispositivo.</li>
+                    <li><strong>Oposición publicitaria:</strong> desactiva los anuncios actualizando al plan Premium o
+                        ajustando los permisos de publicidad en la configuración de tu dispositivo.</li>
+                </ul>
 
-        <h3>3. Premium subscription</h3>
-        <ul>
-          <li>Recurring monthly billing processed by Google Play Store or Apple App Store
-            depending on the platform.</li>
-          <li><strong>Free trial period: 7 days.</strong> You will not be charged if you
-            cancel before the trial period ends.</li>
-          <li>The subscription renews automatically unless cancelled at least 24 hours
-            before the end of the active period.</li>
-          <li>Refund policy is governed entirely by the conditions of Google Play or Apple
-            App Store according to the purchase platform.</li>
-        </ul>
+                <h3>6. Seguridad</h3>
+                <p>Como los datos residen en tu dispositivo, la seguridad depende principalmente del bloqueo de pantalla
+                    y de las medidas de protección de tu propio teléfono. Te recomendamos mantener el dispositivo
+                    actualizado y usar bloqueo con PIN o biometría.</p>
 
-        <h3>4. Intellectual property of content</h3>
-        <p>
-          All content you write in DiarioApp — entries, reflections, text — is your
-          exclusive property. Business Productivity Labs claims no rights over user entries.
-        </p>
+                <h3>7. Menores de edad</h3>
+                <p>La aplicación no está dirigida a menores de 13 años. No recopilamos intencionalmente información de
+                    menores. Si eres padre o tutor y crees que tu hijo ha proporcionado información, contáctanos para
+                    eliminarla.</p>
 
-        <h3>5. Acceptable use</h3>
-        <p>The following are prohibited:</p>
-        <ul>
-          <li>Reverse engineering, decompiling, or modifying the application.</li>
-          <li>Distributing unauthorized copies of the app.</li>
-          <li>Using the app for illegal purposes or activities that harm third parties.</li>
-        </ul>
+                <h3>8. Cambios en esta Política</h3>
+                <p>Si realizamos cambios relevantes, actualizaremos la fecha de vigencia en la parte superior de este
+                    documento. Te recomendamos revisarla periódicamente. Para consultas, escríbenos a
+                    <a href="mailto:businessproductivitylabs@gmail.com">businessproductivitylabs@gmail.com</a>.
+                </p>
+            </section>
 
-        <h3>6. Limitation of liability</h3>
-        <p>
-          DiarioApp stores data locally on your device. Business Productivity Labs is not
-          responsible for data loss resulting from uninstalling the app, factory-resetting
-          the device, or hardware damage.
-          <strong>We recommend making periodic manual backups.</strong>
-        </p>
+            <!-- ══════════════════════════════════════════════════
+                 SECCIÓN 2 — TÉRMINOS Y CONDICIONES
+            ═══════════════════════════════════════════════════ -->
+            <section class="policy-section" id="terminos">
+                <div class="section-header">
+                    <div class="section-icon terms"><i class="bi bi-file-earmark-text-fill"></i></div>
+                    <div>
+                        <h2>Términos y Condiciones</h2>
+                        <p class="section-date">Última actualización: 14 de abril de 2026</p>
+                    </div>
+                </div>
 
-        <h3>7. Changes to the service</h3>
-        <p>
-          We reserve the right to modify, suspend, or discontinue app features at any time,
-          with or without prior notice.
-        </p>
+                <div class="notice">
+                    Al descargar o utilizar <strong>DiarioApp</strong>, aceptas los presentes Términos y Condiciones.
+                    Si no estás de acuerdo, por favor desinstala la aplicación.
+                </div>
 
-        <h3>8. Governing law and jurisdiction</h3>
-        <p>
-          These Terms are governed by the laws of the <strong>Republic of Colombia</strong>.
-          Any dispute shall be subject to the exclusive jurisdiction of the courts of
-          <strong>Bogotá D.C.</strong>
-        </p>
+                <h3>1. Descripción del servicio</h3>
+                <p>DiarioApp es una aplicación móvil de diario personal que permite escribir entradas con texto libre,
+                    estado de ánimo y fotos, con recordatorio diario configurable y vista de calendario para revisar el
+                    historial. Operada por <strong>Business Productivity Labs</strong>.</p>
 
-        <h3>9. Contact</h3>
-        <p>
-          For legal inquiries or claims:
-          <a href="mailto:businessproductivitylabs@gmail.com">businessproductivitylabs@gmail.com</a>
-        </p>
-      </div>
+                <h3>2. Planes disponibles</h3>
+                <ul>
+                    <li><strong>Plan Free:</strong> hasta 30 entradas totales almacenadas; incluye anuncios de AdMob;
+                        acceso al historial de los últimos 30 días en el calendario.</li>
+                    <li><strong>Plan Premium:</strong> entradas ilimitadas, adjunto de fotos, exportación a PDF,
+                        historial completo en el calendario y experiencia sin anuncios.</li>
+                </ul>
 
-      <!-- ── DATA DELETION ── -->
-      <div class="doc-section" id="data-deletion-en">
-        <h2>Data Deletion</h2>
-        <p><strong>App:</strong> MiDiario &nbsp;|&nbsp; <strong>Developer:</strong> Business Productivity Labs</p>
+                <h3>3. Suscripción Premium</h3>
+                <ul>
+                    <li>Facturación mensual recurrente procesada por Google Play Store o Apple App Store según la
+                        plataforma.</li>
+                    <li><strong>Período de prueba gratuita: 7 días.</strong> No se realiza ningún cobro si cancelas
+                        antes de que finalice el período de prueba.</li>
+                    <li>La suscripción <strong>se renueva automáticamente</strong> salvo que sea cancelada con al menos
+                        24 horas de antelación al fin del período activo.</li>
+                    <li>La política de reembolsos corresponde íntegramente a las condiciones de Google Play o Apple App
+                        Store según la plataforma de compra.</li>
+                </ul>
 
-        <h3>How to delete your data</h3>
-        <p>All your diary entries and preferences are stored <strong>exclusively on your device</strong>. To permanently delete all your data:</p>
-        <ol>
-          <li>Open <strong>MiDiario</strong>.</li>
-          <li>Go to <strong>Settings</strong> (bottom navigation bar).</li>
-          <li>Scroll down to the <strong>Data</strong> section.</li>
-          <li>Tap <strong>"Clear all data"</strong> and confirm twice.</li>
-        </ol>
-        <p>This action is <strong>immediate and irreversible</strong>. All diary entries, mood records, preferences and settings are permanently erased from your device.</p>
+                <h3>4. Propiedad intelectual del contenido</h3>
+                <p>Todo el contenido que escribes en DiarioApp —entradas, reflexiones, textos— es de tu propiedad
+                    exclusiva. Business Productivity Labs no reivindica ningún derecho sobre las entradas del usuario.</p>
 
-        <h3>What is deleted</h3>
-        <ul>
-          <li>All diary entries (title, body text, mood, date)</li>
-          <li>App preferences (theme, language, reminder time)</li>
-          <li>Premium status cache (local only; your purchase remains in Google Play)</li>
-        </ul>
+                <h3>5. Uso aceptable</h3>
+                <p>Queda prohibido:</p>
+                <ul>
+                    <li>Realizar ingeniería inversa, descompilar o modificar la aplicación.</li>
+                    <li>Distribuir copias no autorizadas de la app.</li>
+                    <li>Usar la app con fines ilegales o para actividades que dañen a terceros.</li>
+                </ul>
 
-        <h3>What is NOT deleted</h3>
-        <ul>
-          <li><strong>Google AdMob:</strong> advertising data managed by Google. Manage at <a href="https://myaccount.google.com/data-and-privacy" target="_blank">myaccount.google.com</a>.</li>
-          <li><strong>RevenueCat / Google Play:</strong> purchase history is retained by Google Play. Manage at <a href="https://play.google.com/store/account/subscriptions" target="_blank">Google Play Subscriptions</a>.</li>
-        </ul>
+                <h3>6. Limitación de responsabilidad</h3>
+                <p>DiarioApp almacena los datos localmente en tu dispositivo. Business Productivity Labs no se
+                    responsabiliza por la pérdida de datos derivada de la desinstalación de la app, el restablecimiento
+                    de fábrica del dispositivo o daños al hardware.
+                    <strong>Recomendamos realizar copias de respaldo periódicas.</strong>
+                </p>
 
-        <h3>Contact</h3>
-        <p>For data deletion requests or questions: <a href="mailto:businessproductivitylabs@gmail.com">businessproductivitylabs@gmail.com</a></p>
-      </div>
+                <h3>7. Modificaciones al servicio</h3>
+                <p>Nos reservamos el derecho de modificar, suspender o descontinuar funcionalidades de la app en
+                    cualquier momento, con o sin previo aviso.</p>
 
-    </div><!-- /lang-en -->
+                <h3>8. Ley aplicable y jurisdicción</h3>
+                <p>Estos Términos se rigen por las leyes de la <strong>República de Colombia</strong>. Cualquier
+                    controversia se someterá a la jurisdicción exclusiva de los tribunales de
+                    <strong>Bogotá D.C.</strong>
+                </p>
+            </section>
 
-  </main>
+            <!-- ══════════════════════════════════════════════════
+                 SECCIÓN 3 — ELIMINACIÓN DE DATOS
+            ═══════════════════════════════════════════════════ -->
+            <section class="policy-section" id="eliminacion">
+                <div class="section-header">
+                    <div class="section-icon deletion"><i class="bi bi-trash3-fill"></i></div>
+                    <div>
+                        <h2>Eliminación de Datos</h2>
+                        <p class="section-date">Aplicación: DiarioApp (MiDiario) · Business Productivity Labs</p>
+                    </div>
+                </div>
 
-  <footer>
-    <p>
-      &copy; 2026 Business Productivity Labs ·
-      <a href="mailto:businessproductivitylabs@gmail.com">businessproductivitylabs@gmail.com</a>
-    </p>
-    <p style="margin-top:0.4rem; font-size:0.8rem; opacity:0.6;">
-      DiarioApp · com.businessproductivitylabs.midiario
-    </p>
-  </footer>
+                <h3>Cómo eliminar tus datos</h3>
+                <p>Todas tus entradas y preferencias se guardan <strong>exclusivamente en tu dispositivo</strong>. Para
+                    eliminar todos tus datos de forma permanente:</p>
+                <ol>
+                    <li>Abre <strong>MiDiario</strong>.</li>
+                    <li>Ve a <strong>Configuración</strong> (barra de navegación inferior).</li>
+                    <li>Desplázate hasta la sección <strong>Datos</strong>.</li>
+                    <li>Pulsa <strong>"Limpiar todos los datos"</strong> y confirma dos veces.</li>
+                </ol>
+                <p>Esta acción es <strong>inmediata e irreversible</strong>. Se eliminan permanentemente todas las
+                    entradas del diario, registros de estado de ánimo, preferencias y configuraciones de tu dispositivo.</p>
 
-  <script>
-    function setLang(lang) {
-      document.querySelectorAll('.lang-section').forEach(function(el) {
-        el.classList.remove('visible');
-      });
-      document.querySelectorAll('.lang-btn').forEach(function(btn) {
-        btn.classList.remove('active');
-      });
-      document.getElementById('lang-' + lang).classList.add('visible');
-      event.target.classList.add('active');
-    }
-  </script>
+                <h3>Qué se elimina</h3>
+                <ul>
+                    <li>Todas las entradas del diario (título, cuerpo, estado de ánimo, fecha)</li>
+                    <li>Preferencias de la app (tema, idioma, hora de recordatorio)</li>
+                    <li>Caché local del estado Premium (tu compra permanece en Google Play)</li>
+                </ul>
+
+                <h3>Qué NO se elimina</h3>
+                <ul>
+                    <li><strong>Google AdMob:</strong> datos publicitarios gestionados por Google. Gestiona en <a
+                            href="https://myaccount.google.com/data-and-privacy" target="_blank"
+                            rel="noopener">myaccount.google.com</a>.</li>
+                    <li><strong>RevenueCat / Google Play:</strong> el historial de compras lo conserva Google Play.
+                        Gestiona en <a href="https://play.google.com/store/account/subscriptions" target="_blank"
+                            rel="noopener">Suscripciones de Google Play</a>.</li>
+                </ul>
+            </section>
+
+            <!-- ══════════════════════════════════════════════════
+                 SECCIÓN 4 — CONTACTO
+            ═══════════════════════════════════════════════════ -->
+            <section class="policy-section" id="contacto">
+                <div class="section-header">
+                    <div class="section-icon contact"><i class="bi bi-envelope-fill"></i></div>
+                    <div>
+                        <h2>Contacto</h2>
+                        <p class="section-date">¿Preguntas sobre privacidad, suscripciones o soporte?</p>
+                    </div>
+                </div>
+
+                <p>Si tienes dudas sobre esta Política de Privacidad, los Términos de Uso, necesitas eliminar tus datos
+                    o requieres soporte técnico, puedes contactarnos a través de:</p>
+
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="label">Aplicación</div>
+                        <div class="value">DiarioApp (MiDiario)</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="label">Desarrollador</div>
+                        <div class="value">Business Productivity Labs</div>
+                    </div>
+                    <div class="contact-item full">
+                        <div class="label">Correo electrónico</div>
+                        <div class="value"><a href="mailto:businessproductivitylabs@gmail.com"><i
+                                    class="bi bi-envelope me-1"></i>businessproductivitylabs@gmail.com</a></div>
+                    </div>
+                    <div class="contact-item full">
+                        <div class="label">Paquete de la app</div>
+                        <div class="value"><code>com.businessproductivitylabs.midiario</code></div>
+                    </div>
+                    <div class="contact-item full">
+                        <div class="label">Fecha de vigencia</div>
+                        <div class="value">14 de abril de 2026</div>
+                    </div>
+                </div>
+
+                <p style="margin-top:20px; font-size:.85rem; color:var(--text-muted);">
+                    <i class="bi bi-clock me-1"></i> Intentaremos responder todas las consultas en un plazo máximo de 5
+                    días hábiles.
+                </p>
+            </section>
+
+        </div><!-- /lang-es -->
+
+        <!-- ── English ──────────────────────────────────── -->
+        <div id="lang-en" class="lang-section">
+
+            <!-- ══════════════════════════════════════════════
+                 SECTION 1 — PRIVACY POLICY
+            ═══════════════════════════════════════════════ -->
+            <section class="policy-section" id="privacy">
+                <div class="section-header">
+                    <div class="section-icon privacy"><i class="bi bi-shield-lock-fill"></i></div>
+                    <div>
+                        <h2>Privacy Policy</h2>
+                        <p class="section-date">Last updated: April 14, 2026</p>
+                    </div>
+                </div>
+
+                <div class="notice">
+                    <strong><i class="bi bi-info-circle-fill me-1"></i>Quick summary:</strong> DiarioApp does not
+                    require registration or an account. Your diary content is saved <strong>exclusively on your
+                        device</strong>. Only third-party advertising and subscription services (Google AdMob and
+                    RevenueCat) may collect anonymous usage data according to their own policies.
+                </div>
+
+                <h3>1. Data controller</h3>
+                <p>The application <strong>DiarioApp</strong> (package identifier:
+                    <code>com.businessproductivitylabs.midiario</code>) is developed and maintained by <strong>Business
+                        Productivity Labs</strong>. If you have questions about this policy, you may contact us at the
+                    address indicated at the end of this document.
+                </p>
+
+                <h3>2. Locally stored data</h3>
+                <p>DiarioApp stores all your information <strong>exclusively on your device</strong> using
+                    <code>AsyncStorage</code>. We never send, upload, or transmit your diary content to any of our own
+                    servers.</p>
+                <p>Data stored locally includes:</p>
+                <ul>
+                    <li>Diary entries: title, body, mood, and date</li>
+                    <li>Preferences: visual theme (light / dark / auto), language, and reminder time</li>
+                    <li>Plan status: free or Premium</li>
+                </ul>
+
+                <div class="notice">
+                    <strong>Your diary belongs only to you.</strong> The content of your entries never leaves your
+                    device and is not accessible by Business Productivity Labs.
+                </div>
+
+                <p>The only data that may be collected is handled by the following <strong>third-party services</strong>
+                    integrated in the application:</p>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Purpose</th>
+                                <th>Data it may process</th>
+                                <th>Official policy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Google AdMob</strong></td>
+                                <td>Display ads to free-plan users</td>
+                                <td>Device advertising ID (IDFA / GAID), ad interaction data</td>
+                                <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google
+                                        Privacy Policy <i class="bi bi-box-arrow-up-right"
+                                            style="font-size:.7em"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>RevenueCat</strong></td>
+                                <td>Manage premium subscriptions</td>
+                                <td>Anonymous device ID, purchase/subscription history (no card data)</td>
+                                <td><a href="https://www.revenuecat.com/privacy" target="_blank"
+                                        rel="noopener">RevenueCat Privacy Policy <i class="bi bi-box-arrow-up-right"
+                                            style="font-size:.7em"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Google Play / App Store</strong></td>
+                                <td>Distribution and payment processing</td>
+                                <td>Managed directly by Google or Apple during the purchase process</td>
+                                <td><a href="https://play.google.com/about/play-terms/" target="_blank"
+                                        rel="noopener">Google Play Terms <i class="bi bi-box-arrow-up-right"
+                                            style="font-size:.7em"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>3. Local notifications</h3>
+                <p>If you enable the daily writing reminder, the app schedules local notifications through the
+                    <strong>Notifee</strong> library. These notifications are processed <strong>entirely on your
+                        device</strong> without sending any data to external servers. You can disable them at any time
+                    from the app's Settings screen or from your device settings.
+                </p>
+
+                <h3>4. Requested permissions</h3>
+                <ul>
+                    <li><strong>POST_NOTIFICATIONS</strong> — To send the daily writing reminder (Android 13+).
+                        Optional.</li>
+                    <li><strong>INTERNET</strong> — Required by Google AdMob and RevenueCat to display ads and validate
+                        subscriptions.</li>
+                    <li><strong>CAMERA / READ_MEDIA_IMAGES</strong> — To attach photos to diary entries (Premium plan).
+                        Optional.</li>
+                    <li><strong>RECEIVE_BOOT_COMPLETED</strong> — To reschedule reminders after device restart.
+                        Optional.</li>
+                </ul>
+
+                <h3>5. User rights (GDPR / LGPD)</h3>
+                <ul>
+                    <li><strong>Access:</strong> you may request an export of your data by contacting us at <a
+                            href="mailto:businessproductivitylabs@gmail.com">businessproductivitylabs@gmail.com</a>.</li>
+                    <li><strong>Rectification:</strong> you can edit any diary entry directly in the app at any time.
+                    </li>
+                    <li><strong>Erasure:</strong> go to <em>Settings → Clear all data</em> to permanently and
+                        irreversibly delete all your information from the device.</li>
+                    <li><strong>Advertising opt-out:</strong> disable ads by upgrading to Premium or by adjusting
+                        advertising permissions in your device settings.</li>
+                </ul>
+
+                <h3>6. Security</h3>
+                <p>Since data resides on your device, security depends primarily on your screen lock and your phone's
+                    built-in protections. We recommend keeping your device updated and enabling PIN or biometric lock.</p>
+
+                <h3>7. Minors</h3>
+                <p>The application is not intended for children under 13. We do not intentionally collect information
+                    from minors. If you are a parent or guardian and believe your child has provided information, please
+                    contact us to have it removed.</p>
+
+                <h3>8. Changes to this Policy</h3>
+                <p>If we make significant changes, we will update the effective date at the top of this document. We
+                    encourage you to review it periodically. For questions, email us at
+                    <a href="mailto:businessproductivitylabs@gmail.com">businessproductivitylabs@gmail.com</a>.
+                </p>
+            </section>
+
+            <!-- ══════════════════════════════════════════════
+                 SECTION 2 — TERMS AND CONDITIONS
+            ═══════════════════════════════════════════════ -->
+            <section class="policy-section" id="terms">
+                <div class="section-header">
+                    <div class="section-icon terms"><i class="bi bi-file-earmark-text-fill"></i></div>
+                    <div>
+                        <h2>Terms and Conditions</h2>
+                        <p class="section-date">Last updated: April 14, 2026</p>
+                    </div>
+                </div>
+
+                <div class="notice">
+                    By downloading or using <strong>DiarioApp</strong>, you agree to these Terms and Conditions. If you
+                    do not agree, please uninstall the application.
+                </div>
+
+                <h3>1. Description of service</h3>
+                <p>DiarioApp is a personal diary mobile app that lets you write entries with free text, mood tracking,
+                    and photos, with a configurable daily reminder and a calendar view to review your history. Operated
+                    by <strong>Business Productivity Labs</strong>.</p>
+
+                <h3>2. Available plans</h3>
+                <ul>
+                    <li><strong>Free plan:</strong> up to 30 total stored entries; includes AdMob ads; calendar history
+                        limited to the last 30 days.</li>
+                    <li><strong>Premium plan:</strong> unlimited entries, photo attachments, PDF export, full calendar
+                        history, and an ad-free experience.</li>
+                </ul>
+
+                <h3>3. Premium subscription</h3>
+                <ul>
+                    <li>Recurring monthly billing processed by Google Play Store or Apple App Store depending on the
+                        platform.</li>
+                    <li><strong>Free trial period: 7 days.</strong> You will not be charged if you cancel before the
+                        trial period ends.</li>
+                    <li>The subscription <strong>renews automatically</strong> unless cancelled at least 24 hours before
+                        the end of the active period.</li>
+                    <li>Refund policy is governed entirely by the conditions of Google Play or Apple App Store according
+                        to the purchase platform.</li>
+                </ul>
+
+                <h3>4. Intellectual property of content</h3>
+                <p>All content you write in DiarioApp — entries, reflections, text — is your exclusive property.
+                    Business Productivity Labs claims no rights over user entries.</p>
+
+                <h3>5. Acceptable use</h3>
+                <p>The following are prohibited:</p>
+                <ul>
+                    <li>Reverse engineering, decompiling, or modifying the application.</li>
+                    <li>Distributing unauthorized copies of the app.</li>
+                    <li>Using the app for illegal purposes or activities that harm third parties.</li>
+                </ul>
+
+                <h3>6. Limitation of liability</h3>
+                <p>DiarioApp stores data locally on your device. Business Productivity Labs is not responsible for data
+                    loss resulting from uninstalling the app, factory-resetting the device, or hardware damage.
+                    <strong>We recommend making periodic manual backups.</strong>
+                </p>
+
+                <h3>7. Changes to the service</h3>
+                <p>We reserve the right to modify, suspend, or discontinue app features at any time, with or without
+                    prior notice.</p>
+
+                <h3>8. Governing law and jurisdiction</h3>
+                <p>These Terms are governed by the laws of the <strong>Republic of Colombia</strong>. Any dispute shall
+                    be subject to the exclusive jurisdiction of the courts of <strong>Bogotá D.C.</strong></p>
+            </section>
+
+            <!-- ══════════════════════════════════════════════
+                 SECTION 3 — DATA DELETION
+            ═══════════════════════════════════════════════ -->
+            <section class="policy-section" id="deletion">
+                <div class="section-header">
+                    <div class="section-icon deletion"><i class="bi bi-trash3-fill"></i></div>
+                    <div>
+                        <h2>Data Deletion</h2>
+                        <p class="section-date">App: DiarioApp (MiDiario) · Business Productivity Labs</p>
+                    </div>
+                </div>
+
+                <h3>How to delete your data</h3>
+                <p>All your diary entries and preferences are stored <strong>exclusively on your device</strong>. To
+                    permanently delete all your data:</p>
+                <ol>
+                    <li>Open <strong>MiDiario</strong>.</li>
+                    <li>Go to <strong>Settings</strong> (bottom navigation bar).</li>
+                    <li>Scroll down to the <strong>Data</strong> section.</li>
+                    <li>Tap <strong>"Clear all data"</strong> and confirm twice.</li>
+                </ol>
+                <p>This action is <strong>immediate and irreversible</strong>. All diary entries, mood records,
+                    preferences and settings are permanently erased from your device.</p>
+
+                <h3>What is deleted</h3>
+                <ul>
+                    <li>All diary entries (title, body text, mood, date)</li>
+                    <li>App preferences (theme, language, reminder time)</li>
+                    <li>Premium status cache (local only; your purchase remains in Google Play)</li>
+                </ul>
+
+                <h3>What is NOT deleted</h3>
+                <ul>
+                    <li><strong>Google AdMob:</strong> advertising data managed by Google. Manage at <a
+                            href="https://myaccount.google.com/data-and-privacy" target="_blank"
+                            rel="noopener">myaccount.google.com</a>.</li>
+                    <li><strong>RevenueCat / Google Play:</strong> purchase history is retained by Google Play. Manage
+                        at <a href="https://play.google.com/store/account/subscriptions" target="_blank"
+                            rel="noopener">Google Play Subscriptions</a>.</li>
+                </ul>
+            </section>
+
+            <!-- ══════════════════════════════════════════════
+                 SECTION 4 — CONTACT
+            ═══════════════════════════════════════════════ -->
+            <section class="policy-section" id="contact">
+                <div class="section-header">
+                    <div class="section-icon contact"><i class="bi bi-envelope-fill"></i></div>
+                    <div>
+                        <h2>Contact</h2>
+                        <p class="section-date">Questions about privacy, subscriptions, or support?</p>
+                    </div>
+                </div>
+
+                <p>If you have questions about this Privacy Policy, the Terms of Use, need to delete your data, or
+                    require technical support, you can reach us at:</p>
+
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="label">Application</div>
+                        <div class="value">DiarioApp (MiDiario)</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="label">Developer</div>
+                        <div class="value">Business Productivity Labs</div>
+                    </div>
+                    <div class="contact-item full">
+                        <div class="label">Email address</div>
+                        <div class="value"><a href="mailto:businessproductivitylabs@gmail.com"><i
+                                    class="bi bi-envelope me-1"></i>businessproductivitylabs@gmail.com</a></div>
+                    </div>
+                    <div class="contact-item full">
+                        <div class="label">App package</div>
+                        <div class="value"><code>com.businessproductivitylabs.midiario</code></div>
+                    </div>
+                    <div class="contact-item full">
+                        <div class="label">Effective date</div>
+                        <div class="value">April 14, 2026</div>
+                    </div>
+                </div>
+
+                <p style="margin-top:20px; font-size:.85rem; color:var(--text-muted);">
+                    <i class="bi bi-clock me-1"></i> We will try to respond to all inquiries within a maximum of 5
+                    business days.
+                </p>
+            </section>
+
+        </div><!-- /lang-en -->
+
+    </div><!-- /content-wrap -->
+
+    <!-- ── Footer ───────────────────────────────────────── -->
+    <footer>
+        <img src="../imagenes/Icono.png" alt="Business Productivity Labs" class="footer-logo"><br>
+        <strong>© 2026 DiarioApp</strong> — Business Productivity Labs. Todos los derechos reservados.
+        <div class="footer-links">
+            <a href="#privacidad"><i class="bi bi-shield-lock"></i> Política de Privacidad</a>
+            <a href="#terminos"><i class="bi bi-file-earmark-text"></i> Términos y Condiciones</a>
+            <a href="#eliminacion"><i class="bi bi-trash3"></i> Eliminación de Datos</a>
+            <a href="#contacto"><i class="bi bi-envelope"></i> Contacto</a>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        var navCfg = {
+            es: [
+                { href: '#privacidad', text: 'Política de Privacidad' },
+                { href: '#terminos', text: 'Términos y Condiciones' },
+                { href: '#eliminacion', text: 'Eliminación de Datos' },
+                { href: '#contacto', text: 'Contacto' }
+            ],
+            en: [
+                { href: '#privacy', text: 'Privacy Policy' },
+                { href: '#terms', text: 'Terms & Conditions' },
+                { href: '#deletion', text: 'Data Deletion' },
+                { href: '#contact', text: 'Contact' }
+            ]
+        };
+
+        function setLang(lang, btn) {
+            document.querySelectorAll('.lang-section').forEach(function (el) {
+                el.classList.remove('visible');
+            });
+            document.querySelectorAll('.lang-btn').forEach(function (b) {
+                b.classList.remove('active');
+            });
+            document.getElementById('lang-' + lang).classList.add('visible');
+            btn.classList.add('active');
+
+            var links = document.querySelectorAll('#nav-links a');
+            navCfg[lang].forEach(function (item, i) {
+                links[i].href = item.href;
+                links[i].querySelector('span').textContent = item.text;
+            });
+        }
+    </script>
 
 </body>
 </html>
